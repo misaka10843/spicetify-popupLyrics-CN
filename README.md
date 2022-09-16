@@ -1,0 +1,2 @@
+# spicetify-popupLyrics-CN
+更适合中国用户的spicetify悬浮歌词插件popupLyrics
