@@ -186,7 +186,7 @@ function PopupLyrics() {
         };
 
         const cleanTitle = LyricUtils.removeExtraInfo(LyricUtils.normalize(info.title));
-        const finalURL = searchURL + encodeURIComponent(`${cleanTitle} ${info.artist}`);
+        const finalURL = searchURL + encodeURIComponent(`${info.artist}-${cleanTitle.replace(/\s*/g,"")}`);
 
         const searchResults = await CosmosAsync.get(finalURL, null, requestHeader);
         const items = searchResults.result.songs;
@@ -280,7 +280,7 @@ function PopupLyrics() {
         };
 
         const cleanTitle = LyricUtils.removeExtraInfo(LyricUtils.normalize(info.title));
-        const finalURL = searchURL + encodeURIComponent(`${cleanTitle}`);
+        const finalURL = searchURL + encodeURIComponent(`${info.artist}-${cleanTitle.replace(/\s*/g,"")}`);
         console.log(finalURL);
         const searchResults = await CosmosAsync.get(finalURL, null, requestHeader);
         const items = searchResults.result.songs;
