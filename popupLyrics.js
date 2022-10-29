@@ -272,6 +272,7 @@ function PopupLyrics() {
     }
     
       static async fetchNeteaseCN(info) {
+        console.log("net");
         const searchURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/search?keywords=`;
         const lyricURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/lyric?id=`;
         const requestHeader = {
@@ -279,14 +280,13 @@ function PopupLyrics() {
         };
 
         const cleanTitle = LyricUtils.removeExtraInfo(LyricUtils.normalize(info.title));
-        const finalURL = searchURL + encodeURIComponent(`${cleanTitle} ${info.artist}`);
-
+        const finalURL = searchURL + encodeURIComponent(`${cleanTitle}`);
+        console.log(finalURL);
         const searchResults = await CosmosAsync.get(finalURL, null, requestHeader);
         const items = searchResults.result.songs;
         if (!items || !items.length) {
-            return {
-                error: "Cannot find track"
-            };
+          console.log("fetchSpotify");
+          return fetchSpotify(info);
         }
 
         const album = LyricUtils.capitalize(info.album);
