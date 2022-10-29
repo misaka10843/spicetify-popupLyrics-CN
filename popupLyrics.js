@@ -179,8 +179,8 @@ function PopupLyrics() {
       }
 
       static async fetchNetease(info) {
-        const searchURL = `https://music.xianqiao.wang/neteaseapiv2/search?limit=10&type=1&keywords=`;
-        const lyricURL = `https://music.xianqiao.wang/neteaseapiv2/lyric?id=`;
+        const searchURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/search?keywords=`;
+        const lyricURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/lyric?id=`;
         const requestHeader = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
         };
@@ -272,8 +272,8 @@ function PopupLyrics() {
     }
     
       static async fetchNeteaseCN(info) {
-        const searchURL = `https://music.xianqiao.wang/neteaseapiv2/search?limit=10&type=1&keywords=`;
-        const lyricURL = `https://music.xianqiao.wang/neteaseapiv2/lyric?id=`;
+        const searchURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/search?keywords=`;
+        const lyricURL = `http://action.sakurakoyi.top/api/json?url=https://netease-cloud-music-api-nine-rouge.vercel.app/lyric?id=`;
         const requestHeader = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
         };
